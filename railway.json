@@ -1,0 +1,8 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "name": "artemo-openai-backend",
+  "plugins": {},
+  "variables": {
+    "OPENAI_API_KEY": ""
+  }
+}
