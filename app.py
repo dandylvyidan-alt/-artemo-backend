@@ -11,7 +11,13 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 @app.get("/")
 def health():
-       return jsonify({"ok": True, "service": "artemo-openai-backend"})
+    return jsonify({"ok": True, "service": "artemo-openai-backend"})
+
+@app.get("/diag")
+def diag():
+    has_key = bool(os.getenv("OPENAI_API_KEY")) and os.getenv("OPENAI_API_KEY").startswith("sk-")
+    return jsonify({"has_openai_key": has_key})
+
 
 @app.post("/analyze")
 def analyze():
